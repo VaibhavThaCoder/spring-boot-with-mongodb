@@ -11,13 +11,12 @@ import java.util.List;
  * @date 1/10/21
  * @time 12:14 PM
  */
-public interface IUserService
-{
-    void saveUser(User user);
+public interface IUserService {
+	void saveUser(User user);
 
-    List<User> findUsersByCountry(String country);
+	List<User> findUsersByCountry(String country);
 
-    List<UserAggregation> groupByCountry();
+	List<UserAggregation> groupByCountry();
 
-    List<CountryAggregation> countByCountry();
+	List<CountryAggregation> countByCountry();
 }

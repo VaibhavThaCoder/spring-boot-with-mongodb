@@ -12,34 +12,29 @@ import org.springframework.web.bind.annotation.*;
  * @time 12:48 PM
  */
 @RestController
-@RequestMapping("api/user")//pre-path
-public class UserController
-{
-    @Autowired
-    private IUserService userService;
+@RequestMapping("api/user") // pre-path
+public class UserController {
+	@Autowired
+	private IUserService userService;
 
-    @PostMapping
-    public ResponseEntity<?> saveUser(@RequestBody UserDto userDto)
-    {
-        userService.saveUser(userDto.convertToUser());
-        return ResponseEntity.ok(true);
-    }
+	@PostMapping
+	public ResponseEntity<?> saveUser(@RequestBody UserDto userDto) {
+		userService.saveUser(userDto.convertToUser());
+		return ResponseEntity.ok(true);
+	}
 
-    @GetMapping("country/{country}")
-    public ResponseEntity<?> findByCountry(@PathVariable String country)
-    {
-        return ResponseEntity.ok(userService.findUsersByCountry(country));
-    }
+	@GetMapping("country/{country}")
+	public ResponseEntity<?> findByCountry(@PathVariable String country) {
+		return ResponseEntity.ok(userService.findUsersByCountry(country));
+	}
 
-    @GetMapping("count-by-country")
-    public ResponseEntity<?> countByCountry()
-    {
-        return ResponseEntity.ok(userService.countByCountry());
-    }
+	@GetMapping("count-by-country")
+	public ResponseEntity<?> countByCountry() {
+		return ResponseEntity.ok(userService.countByCountry());
+	}
 
-    @GetMapping("group-by-country")
-    public ResponseEntity<?> groupByCountry()
-    {
-        return ResponseEntity.ok(userService.groupByCountry());
-    }
+	@GetMapping("group-by-country")
+	public ResponseEntity<?> groupByCountry() {
+		return ResponseEntity.ok(userService.groupByCountry());
+	}
 }

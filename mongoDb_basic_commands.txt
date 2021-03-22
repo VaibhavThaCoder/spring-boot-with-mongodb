@@ -1,0 +1,9 @@
+>> for creating database
+
+user db_order_management
+
+>> for creating user in db 
+db.createUser({user:"demo", pwd: "demo", roles: ["readWrite","dbAdmin"]})
+
+
+for sample data refer "generate_db" in src/main/resources

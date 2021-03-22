@@ -12,22 +12,19 @@ import org.springframework.web.bind.annotation.*;
  * @time 2:07 PM
  */
 @RestController
-@RequestMapping("api/order")//pre-path
-public class OrderController
-{
-    @Autowired
-    private IOrderService orderService;
+@RequestMapping("api/order") // pre-path
+public class OrderController {
+	@Autowired
+	private IOrderService orderService;
 
-    @PostMapping
-    public ResponseEntity<?> saveOrder(@RequestBody OrderDto orderDto)
-    {
-        orderService.saveOrder(orderDto.convertToOrder());
-        return ResponseEntity.ok(true);
-    }
+	@PostMapping
+	public ResponseEntity<?> saveOrder(@RequestBody OrderDto orderDto) {
+		orderService.saveOrder(orderDto.convertToOrder());
+		return ResponseEntity.ok(true);
+	}
 
-    @GetMapping("{userId}")
-    public ResponseEntity<?> getOrdersOfUser(@PathVariable String userId)
-    {
-        return ResponseEntity.ok(orderService.ordersOfUser(userId));
-    }
+	@GetMapping("{userId}")
+	public ResponseEntity<?> getOrdersOfUser(@PathVariable String userId) {
+		return ResponseEntity.ok(orderService.ordersOfUser(userId));
+	}
 }

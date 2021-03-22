@@ -10,7 +10,6 @@ import java.util.List;
  * @date 1/10/21
  * @time 12:10 PM
  */
-public interface IOrderRepository extends MongoRepository<Order, String>
-{
-    List<Order> findByUserId(String userId);
+public interface IOrderRepository extends MongoRepository<Order, String> {
+	List<Order> findByUserId(String userId);
 }

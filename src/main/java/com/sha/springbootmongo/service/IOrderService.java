@@ -9,9 +9,8 @@ import java.util.List;
  * @date 1/10/21
  * @time 12:20 PM
  */
-public interface IOrderService
-{
-    void saveOrder(Order order);
+public interface IOrderService {
+	void saveOrder(Order order);
 
-    List<Order> ordersOfUser(String userId);
+	List<Order> ordersOfUser(String userId);
 }

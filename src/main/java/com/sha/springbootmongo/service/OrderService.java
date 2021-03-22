@@ -13,20 +13,17 @@ import java.util.List;
  * @time 12:20 PM
  */
 @Service
-public class OrderService implements IOrderService
-{
-    @Autowired
-    private IOrderRepository orderRepository;
+public class OrderService implements IOrderService {
+	@Autowired
+	private IOrderRepository orderRepository;
 
-    @Override
-    public void saveOrder(Order order)
-    {
-        orderRepository.save(order);
-    }
+	@Override
+	public void saveOrder(Order order) {
+		orderRepository.save(order);
+	}
 
-    @Override
-    public List<Order> ordersOfUser(String userId)
-    {
-        return orderRepository.findByUserId(userId);
-    }
+	@Override
+	public List<Order> ordersOfUser(String userId) {
+		return orderRepository.findByUserId(userId);
+	}
 }
